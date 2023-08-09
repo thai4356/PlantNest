@@ -10,7 +10,7 @@
         <x-error style="margin-left: 10%" class="mb-4" :errors="$errors" />
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="px-4 py-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <form action = "{{ url('add-plant')  }}" method="POST">
+                <form action = "{{ url('add-plant')  }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div>
                         <x-input-label for="name" :value="__('name')" />

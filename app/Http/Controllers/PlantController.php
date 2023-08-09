@@ -19,14 +19,26 @@ class PlantController extends Controller
 
     public function store(PlantFormRequest $request)
     {
-        $data = $request->validated();
+        $request->validated();
 //        $plant =  plant::create($data);
-//        return redirect('/add-plant')-> with('message','added successfully');
-        $requestData = $request->all();
-        $fileName = time().$request->file('images')->getClientOriginalExtension();
-        $path=$request->file('images')->storeAs("images",$fileName,'public');
+
+
+        $input = $request->all();
+        if($request->hasFile('image')){
+            $destinationPath = 'public/images/';
+            $image = $request->file('image');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('image')->storeAs($destinationPath,$image_name);
+            $input ['image']=$image_name;
+        }
+
         plant::create($input);
-        return redirect()->route('index')->with('message','added successfully');
+        return redirect('/add-plant')-> with('message','added successfully');
+//        $fileName = time().$request->file('image')->getClientOriginalExtension();
+//        $path=$request->file('image')->storeAs("image",$fileName,'public');
+//        $requestData['images']='/storage/'.$path;
+//        plant::create($requestData);
+//        return redirect()->route('index')->with('message','added successfully');
     }
 
 //    public function edit($product_id){

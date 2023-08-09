@@ -11,7 +11,7 @@ class plant extends Model
 
     use HasFactory;
 
-    protected $guarded =[];
+    protected $primaryKey ='id';
     protected $fillable =[
         'name',
         'description',

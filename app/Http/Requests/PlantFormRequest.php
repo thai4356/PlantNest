@@ -38,7 +38,8 @@ class PlantFormRequest extends FormRequest
                 'min:0'
             ],
             'image'=>[
-                'image',
+                'required',
+                'image'
             ],
             'category_id'=>[
                 'required',
