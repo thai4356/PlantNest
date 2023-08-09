@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PlantController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +29,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::controller(App\Http\Controllers\PlantController::class)->group(function () {
+    Route::get('/add-plant','create');
+    Route::post('/add-plant','store');
+    Route::get('/show-plant','index');
+//    Route::get('/edit-products/{product_id}','edit');
+//    Route::put('/update-products/{product_id}','update');
+//    Route::delete('/delete-product/{product_id}','destroy');
+//    Route::get('/show-products','index');
+//    Route::get('AddToCart/{id}',[productController::class,'AddToCart'])->name('AddToCart');
+});
