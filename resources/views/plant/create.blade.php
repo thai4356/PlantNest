@@ -27,11 +27,13 @@
                         <x-text-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price')" required autofocus />
                         {{--                        <x-input-error :messages="$errors->get('email')" class="mt-2" />--}}
                     </div>
+                    <br>
                     <div>
                         <x-input-label for="image" :value="__('image')" />
-                        <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" :value="old('image')" required autofocus />
+                        <x-text-input id="image" class="block mt-1 w-full" type="file"  name="image" :value="old('image')" required autofocus />
 {{--                        <x-input-error :messages="$errors->get('email')" class="mt-2" />--}}
                     </div>
+                    <br>
                     <div>
                         <x-input-label for="category_id" :value="__('category_id')" />
                         <x-text-input id="category_id" class="block mt-1 w-full" type="text" name="category_id" :value="old('category_id')" required autofocus />

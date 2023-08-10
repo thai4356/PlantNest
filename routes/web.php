@@ -34,9 +34,8 @@ Route::controller(App\Http\Controllers\PlantController::class)->group(function (
     Route::get('/add-plant','create');
     Route::post('/add-plant','store');
     Route::get('/show-plant','index');
-//    Route::get('/edit-products/{product_id}','edit');
-//    Route::put('/update-products/{product_id}','update');
-//    Route::delete('/delete-product/{product_id}','destroy');
-//    Route::get('/show-products','index');
-//    Route::get('AddToCart/{id}',[productController::class,'AddToCart'])->name('AddToCart');
+    Route::get('/edit-plant/{plant_id}','edit');
+    Route::get('/update-plant/{plant_id}','update');
+    Route::delete('/delete-plant/{product_id}','destroy');
+    Route::get('plant/{id}',[PlantController::class,'addToCart'])->name('add_to_cart');
 });
